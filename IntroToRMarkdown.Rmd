@@ -17,8 +17,13 @@ css: styles.css #basic css sheet to make font bigger for this workshop
 
 R Markdown allows you to combine your R code, figures, analysis, and long-form notes all in one place. Some people even write their entire manuscripts in RMarkdown! 
 
+There is so much you can do with R Markdown, today we will just scratch the surface. 
+
 Here is an example of a Markdown output: 
-[Example HTML page](https://kerickson22.github.io/share/exploring_vital_rates_M.html)
+- [Example HTML page](https://kerickson22.github.io/share/exploring_vital_rates_M.html)
+- [Example presentation] (https://kerickson22.github.io/share/presentation_example.html)
+- [a long figure] (https://kerickson22.github.io/share/simulating_collector_bias.html)
+
 
 # Why R Markdown?
 
@@ -57,6 +62,35 @@ RStudio includes a bunch of commonly used options to select from in the Output O
 ![](./Figures/Advanced_Options.png){width=30%}
 Selecting choices and clicking ok will update the YAML header for you. 
 
+## Code Chunks
+Anatomy of a code chunk: 
+![](./Figures/chunk_anatomy.png)
+
+At the top right of each chunk there are some controls: 
+![](./Figures/chunk_controls.png)
+Click the gear to adjust chunk options, the down-ward arrow with the line underneath to run all chunks above the current chunk, and the right arrow to runk just this chunk.
+
+
+# Setup 
+
+The first chunk in an R Markdown document is special and controls some global chunk options. 
+
+Since the option `include=FALSE` is included in the chunk options, it will not be displayed in the output file. 
+
+I like to load packages in this chunk, as well as load data files. 
+
+One thing to note about RMarkdown is that it handles setting the working directory differently than you may be used to. 
+
+By default, the working directory is the directory that contains the markdown file. 
+
+If you use `setwd()` to set the working directory, it will only apply to the current chunk (and you will get a warning message about this)
+
+If you want to change the working directory for the entire document, you can use 
+`knitr::opts_knit$set(root.dir = '/tmp')` to change the root directory for the entire document. 
+
+You can read more about setting the working directory [here](https://bookdown.org/yihui/rmarkdown-cookbook/working-directory.html) 
+
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -67,25 +101,21 @@ knitr::opts_chunk$set(
 library(knitr) #Includes some helpful functions for markdown 
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
 
 ```{r cars}
 summary(cars)
 ```
 
 ## Including Plots
+You can include a plot like so: 
 
-You can also embed plots, for example: When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-```{r plot, echo=FALSE, fig.cap="A figure caption."}
+Setting the chunk option `echo=FALSE` will hide the R code from that chunk in the rendered document. 
+
+```{r myplot, echo=FALSE}
 plot(cars, pch=19)
 ```
-
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ## Including multiple plots on the same line
 
@@ -99,7 +129,7 @@ hist(cars$speed, col="grey")
 hist(pressure$temperature, col="lightblue")
 ```
 
-What if we use par?
+You can also use par, although that doesn't always work with `ggplots` 
 ```{r multiple plots2 }
 
 par(mfrow=c(2,2))
@@ -111,7 +141,7 @@ hist(pressure$temperature, col="lightblue")
 
 ## Including tables
 ```{r a table}
-kable(head(pressure), caption = "This is my table caption.", digits=2) 
+kable(head(pressure), digits=2) 
 #digits: controls how many digits to display in the table
 ```
 
@@ -126,3 +156,9 @@ $$ \int_{-\infty}^{\infty} \mu_x dx $$
 
 
 See https://detexify.kirelabs.org/classify.html for a helpful link for looking up $\LaTeX$ symbols, either by drawing them or looking through a chart. And see https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes for a brief intro to the power of $\LaTeX$ 
+
+# Some helpful links:
+- [The book on R Markdown](https://bookdown.org/yihui/rmarkdown/ )
+- [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+ - [A blog on using R Markdown to create reproducible research](https://elifesciences.org/labs/cad57bcf/composing-reproducible-manuscripts-using-r-markdown)
+ - [A gallery of examples](https://rpubs.com)

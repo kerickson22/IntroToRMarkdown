@@ -1,7 +1,7 @@
 # IntroToRMarkdown
  Tips and Tricks for Using R Markdown, presented on May 20, 2021.
  
- If you are not familiar with GitHub, you can download a zip file of all of the workshop files by clicking on the green `Code` button above, and then selecting `Download ZIP`
+You can download a zip file of all of the workshop files by clicking on the green `Code` button above, and then selecting `Download ZIP`
  
  ![](./Figures/github.png)
  
