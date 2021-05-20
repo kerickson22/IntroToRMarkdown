@@ -19,10 +19,11 @@ R Markdown allows you to combine your R code, figures, analysis, and long-form n
 
 There is so much you can do with R Markdown, today we will just scratch the surface. 
 
-Here is an example of a Markdown output: 
+Here is an example of a Markdown output:
+
 - [Example HTML page](https://kerickson22.github.io/share/exploring_vital_rates_M.html)
-- [Example presentation] (https://kerickson22.github.io/share/presentation_example.html)
-- [a long figure] (https://kerickson22.github.io/share/simulating_collector_bias.html)
+- [Example presentation](https://kerickson22.github.io/share/presentation_example.html)
+- [a long figure](https://kerickson22.github.io/share/simulating_collector_bias.html)
 
 
 # Why R Markdown?
@@ -156,6 +157,17 @@ $$ \int_{-\infty}^{\infty} \mu_x dx $$
 
 
 See https://detexify.kirelabs.org/classify.html for a helpful link for looking up $\LaTeX$ symbols, either by drawing them or looking through a chart. And see https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes for a brief intro to the power of $\LaTeX$ 
+
+# When to cache
+
+For analyses that take a while to run, you can use `cache=TRUE` in the chunk options. 
+
+The first time you render the document, that chunk will run and generate output that will be stored in a cache folder.
+As long as you don't make changes to that code chunk, you can keep on updating other chunks and the next time you **Knit** your document, it will make use of the stored cache instead of running that chunk again. 
+
+Make sure that you don't need to use any of the variables you define in the chunk outside of the script. 
+
+I have found that certain analyses that take a long time to run (hours or days) end up running much slower in R Markdown, so sometimes I instead use the option `eval=FALSE` to prevent that chunk from running, run just that chunk in the console, save the output to an RData file, and load that data file into the next chunk to make use of that output. (you can also do this in a chunk but beware it might take a while)
 
 # Some helpful links:
 - [The book on R Markdown](https://bookdown.org/yihui/rmarkdown/ )
