@@ -1,0 +1,55 @@
+---
+title: "Collector Behavior"
+author: "Kelley Erickson"
+date: "10/14/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+## Data filtering
+Data filter                     | Definition
+-------------                   | -------------
+**Species filter**              | Collectors who have collected species _i_ at least once
+**Genus breadth filter**        | collectors who have collected more than one genus (as well as collectors who have only collected plants within the genus of species _i_
+**Family breadth filter**       | collectors who have collected more than one family (as well as collectors who have only collected Anacardiaceae)
+**Phenology filter**            | collectors who have collected in the same months as species _i_ has been collected
+**Invasive filter**            | collectors who have collected at least one invasive species
+
+## Occurrences by Species  {.smaller}
+
+Species  |  Common Name |  Status |  Unique Collectors | Counties | Total GBIF records (FL) | Records after cleaning 
+--- | --- |--- | --- | --- | --- | ---
+_Mangifera indica_ | Mango | Introduced | 38 | 13 | 95 | 44
+_Metopium toxiferum_ | Poisonwood | Native | 98 | 6 | 160 | 119
+_Rhus aromatica_ | Fragrant Sumac | Native | 3 | 1 | 4 | 3
+_Rhus copallinum_ | Winged Sumac | Native | 207 | 57 | 336 | 296
+_Rhus glabra_ | Smooth Sumac | Native | 5 | 6 | 10 | 7
+_Rhus michauxii_ | Michaux's Sumac | Native, Endangered | 1 | 1 | 1 | 1
+
+(continued on next slide)
+
+## Occurrences by Species (continued) {.smaller}
+Species  |  Common Name |  Status |  Unique Collectors | Counties | Total GBIF records (FL) | Records after cleaning 
+--- | --- |--- | --- | --- | --- | ---
+_Schinus terebinthifolia_ | Brazilian Pepper | Invasive | 324 | 36 | 610 | 495
+_Sorindeia madagascariensis_ | Mtikiza | Introduced | 1 | 1 | 4| 1
+_Spondias purpurea_ | Purple Mombin | Introduced | 12 | 3 | 16 | 13
+_Toxicodendron pubescens_ | Eastern Poison Oak | Native | 30 | 32 | 42 | 36
+_Toxicodendron radicans_ | Eastern Poison Ivy | Native | 269 | 58 | 415 | 379
+_Toxicodendron vernix_ | Poison Sumac | Native | 34 | 21 | 59 | 46
+
+## Slide with R output
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+

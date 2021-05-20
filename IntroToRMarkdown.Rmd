@@ -13,6 +13,13 @@ editor_options:
   chunk_output_type: inline
 css: styles.css #basic css sheet to make font bigger for this workshop
 ---
+# What is R Markdown? 
+
+R Markdown allows you to combine your R code, figures, analysis, and long-form notes all in one place. Some people even write their entire manuscripts in RMarkdown! 
+
+Here is an example of a Markdown output: 
+[Example HTML page](https://kerickson22.github.io/share/exploring_vital_rates_M.html)
+
 # Why R Markdown?
 
 Keep notes about what and *why* you are doing something right along with your code 
