@@ -22,7 +22,7 @@ There is so much you can do with R Markdown, today we will just scratch the surf
 Here is an example of a Markdown output:
 
 - [Example HTML page](https://kerickson22.github.io/share/exploring_vital_rates_M.html)
-- [Example presentation](https://kerickson22.github.io/share/presentation_example.html)
+- [Example presentation](https://kerickson22.github.io/share/Presentation_example.html)
 - [a long figure](https://kerickson22.github.io/share/simulating_collector_bias.html)
 
 
@@ -169,8 +169,14 @@ Make sure that you don't need to use any of the variables you define in the chun
 
 I have found that certain analyses that take a long time to run (hours or days) end up running much slower in R Markdown, so sometimes I instead use the option `eval=FALSE` to prevent that chunk from running, run just that chunk in the console, save the output to an RData file, and load that data file into the next chunk to make use of that output. (you can also do this in a chunk but beware it might take a while)
 
+# Reproducibility 
+You can print session Info
+```{r session Info}
+sessionInfo()
+```
 # Some helpful links:
 - [The book on R Markdown](https://bookdown.org/yihui/rmarkdown/ )
 - [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
  - [A blog on using R Markdown to create reproducible research](https://elifesciences.org/labs/cad57bcf/composing-reproducible-manuscripts-using-r-markdown)
  - [A gallery of examples](https://rpubs.com)
+- [Teaching resources](https://datacarpentry.org/lessons/#ecology-workshop)

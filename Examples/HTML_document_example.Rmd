@@ -19,6 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Load data, set the number of reshufflings to run and initialize a vector to store the values of $\lambda$. (Code not shown)
 ```{r loading data, eval=FALSE, include=FALSE}
+
 n.samp <- 100 #for now, to test
 demog<-read.csv("demography_15_clean.csv", head=T)
 lam.boot <- array(NA, dim=c(n.samp, 6))

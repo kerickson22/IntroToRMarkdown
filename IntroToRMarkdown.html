@@ -409,7 +409,8 @@ summary {
 <li><a href="#writing-out-equations"><span class="toc-section-number">4.4</span> Writing out equations</a></li>
 </ul></li>
 <li><a href="#when-to-cache"><span class="toc-section-number">5</span> When to cache</a></li>
-<li><a href="#some-helpful-links"><span class="toc-section-number">6</span> Some helpful links:</a></li>
+<li><a href="#reproducibility"><span class="toc-section-number">6</span> Reproducibility</a></li>
+<li><a href="#some-helpful-links"><span class="toc-section-number">7</span> Some helpful links:</a></li>
 </ul>
 </div>
 
@@ -420,7 +421,7 @@ summary {
 <p>Here is an example of a Markdown output:</p>
 <ul>
 <li><a href="https://kerickson22.github.io/share/exploring_vital_rates_M.html">Example HTML page</a></li>
-<li><a href="https://kerickson22.github.io/share/presentation_example.html">Example presentation</a></li>
+<li><a href="https://kerickson22.github.io/share/Presentation_example.html">Example presentation</a></li>
 <li><a href="https://kerickson22.github.io/share/simulating_collector_bias.html">a long figure</a></li>
 </ul>
 </div>
@@ -556,13 +557,41 @@ hist(pressure$temperature, col=&quot;lightblue&quot;)</code></pre>
 <p>Make sure that you don’t need to use any of the variables you define in the chunk outside of the script.</p>
 <p>I have found that certain analyses that take a long time to run (hours or days) end up running much slower in R Markdown, so sometimes I instead use the option <code>eval=FALSE</code> to prevent that chunk from running, run just that chunk in the console, save the output to an RData file, and load that data file into the next chunk to make use of that output. (you can also do this in a chunk but beware it might take a while)</p>
 </div>
+<div id="reproducibility" class="section level1">
+<h1><span class="header-section-number">6</span> Reproducibility</h1>
+<p>You can print session Info</p>
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>## R version 4.0.3 (2020-10-10)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Big Sur 10.16
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] knitr_1.31
+## 
+## loaded via a namespace (and not attached):
+##  [1] compiler_4.0.3    magrittr_2.0.1    tools_4.0.3       htmltools_0.5.1.1
+##  [5] yaml_2.2.1        stringi_1.5.3     rmarkdown_2.6     highr_0.8        
+##  [9] stringr_1.4.0     xfun_0.20         digest_0.6.27     rlang_0.4.11     
+## [13] evaluate_0.14</code></pre>
+</div>
 <div id="some-helpful-links" class="section level1">
-<h1><span class="header-section-number">6</span> Some helpful links:</h1>
+<h1><span class="header-section-number">7</span> Some helpful links:</h1>
 <ul>
 <li><a href="https://bookdown.org/yihui/rmarkdown/">The book on R Markdown</a></li>
 <li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">R Markdown Cheatsheet</a></li>
 <li><a href="https://elifesciences.org/labs/cad57bcf/composing-reproducible-manuscripts-using-r-markdown">A blog on using R Markdown to create reproducible research</a></li>
 <li><a href="https://rpubs.com">A gallery of examples</a></li>
+<li><a href="https://datacarpentry.org/lessons/#ecology-workshop">Teaching resources</a></li>
 </ul>
 </div>
 
